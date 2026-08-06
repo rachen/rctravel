@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Japan Trip">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Japan · Vietnam · Taiwan — August 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --paper:#F4EEE1;
+  --paper-deep:#EBE2CE;
+  --ink:#211E1A;
+  --ink-soft:#5B554A;
+  --indigo:#26415E;
+  --indigo-deep:#182A3D;
+  --vermillion:#B8452E;
+  --matcha:#66753F;
+  --gold:#B8862E;
+  --line: rgba(33,30,26,0.16);
+  --line-soft: rgba(33,30,26,0.09);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#F4EEE1;
+    --paper-deep:#EBE2CE;
+    --ink:#211E1A;
+    --ink-soft:#5B554A;
+    --indigo:#26415E;
+    --indigo-deep:#182A3D;
+    --vermillion:#B8452E;
+    --matcha:#66753F;
+    --gold:#B8862E;
+    --line: rgba(33,30,26,0.16);
+    --line-soft: rgba(33,30,26,0.09);
+  }
+  body{background:var(--paper) !important;color:var(--ink) !important;}
+}
+
+*{box-sizing:border-box;}
+html{color-scheme:only light;}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Zen Kaku Gothic New', sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 24px 80px;}
+@media (max-width:480px){
+  .wrap{padding:0 16px 60px;}
+}
+
+h1,h2,h3,.disp{font-family:'Shippori Mincho', serif;}
+
+.mono{font-family:'JetBrains Mono', monospace;}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:56px 24px 40px;
+  text-align:center;
+  position:relative;
+}
+@media (max-width:480px){
+  .hero{padding:36px 8px 28px;}
+}
+.hero .eyebrow{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--vermillion);
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(32px,6vw,54px);
+  font-weight:800;
+  margin:0 0 10px;
+  color:var(--indigo-deep);
+  letter-spacing:0.01em;
+  line-height:1.15;
+}
+.hero .route-line{
+  font-size:clamp(13px,2.4vw,17px);
+  color:var(--ink-soft);
+  letter-spacing:0.04em;
+  margin-bottom:22px;
+}
+.hero .route-line b{color:var(--ink);font-weight:700;}
+.hero .dates{
+  display:inline-flex;
+  gap:18px;
+  align-items:center;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:12px 22px;
+}
+.hero .dates span.sep{color:var(--vermillion);}
+
+/* ---------- STAMP ROUTE ---------- */
+.route-map{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0;
+  margin:8px 0 48px;
+  position:relative;
+}
+.stamp{
+  width:104px;height:104px;
+  border-radius:50%;
+  border:2.5px solid var(--vermillion);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transform:rotate(-6deg);
+  color:var(--vermillion);
+  position:relative;
+  flex-shrink:0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(184,69,46,0.05) 2px, rgba(184,69,46,0.05) 3px);
+}
+.stamp:nth-child(4n+1){transform:rotate(-6deg);}
+.stamp:nth-child(4n+2){transform:rotate(4deg);}
+.stamp:nth-child(4n+3){transform:rotate(-3deg);}
+.stamp:nth-child(4n){transform:rotate(5deg);}
+.stamp .city{
+  font-family:'Shippori Mincho', serif;
+  font-weight:700;
+  font-size:14px;
+  text-align:center;
+  line-height:1.15;
+}
+.stamp .nights{
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px;
+  letter-spacing:0.08em;
+  margin-top:3px;
+  text-transform:uppercase;
+}
+.route-arrow{
+  width:38px;
+  height:1px;
+  background-image:linear-gradient(to right, var(--ink-soft) 50%, transparent 50%);
+  background-size:8px 1px;
+  position:relative;
+  flex-shrink:0;
+}
+.route-arrow::after{
+  content:'';
+  position:absolute;right:-1px;top:-3px;
+  width:0;height:0;
+  border-top:3.5px solid transparent;
+  border-bottom:3.5px solid transparent;
+  border-left:5px solid var(--ink-soft);
+}
+@media (max-width:640px){
+  .route-arrow{width:16px;transform:rotate(90deg);margin:4px 0;}
+  .stamp{width:90px;height:90px;}
+}
+@media (max-width:380px){
+  .stamp{width:78px;height:78px;}
+  .stamp .city{font-size:12px;}
+  .stamp .nights{font-size:8px;}
+}
+
+/* ---------- SECTION HEADERS ---------- */
+.section{margin-top:64px;}
+@media (max-width:480px){
+  .section{margin-top:44px;}
+}
+.section-head{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  margin-bottom:22px;
+  border-bottom:2px solid var(--ink);
+  padding-bottom:10px;
+}
+.section-head .num{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  color:var(--vermillion);
+}
+.section-head h2{
+  font-size:22px;
+  margin:0;
+  color:var(--indigo-deep);
+  font-weight:700;
+}
+.section-sub{
+  font-size:13px;
+  color:var(--ink-soft);
+  margin:-14px 0 24px;
+}
+
+/* ---------- ICONS ---------- */
+.icon{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6;flex-shrink:0;}
+
+/* ---------- DATA TABLES ---------- */
+.data-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);}
+table.data-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+  white-space:nowrap;
+}
+table.data-table thead th{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10.5px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--vermillion);
+  text-align:left;
+  padding:10px 14px;
+  border-bottom:2px solid var(--ink);
+  background:var(--paper-deep);
+}
+table.data-table tbody td{
+  padding:11px 14px;
+  border-bottom:1px solid var(--line-soft);
+  color:var(--ink-soft);
+  vertical-align:middle;
+}
+table.data-table tbody tr:last-child td{border-bottom:none;}
+table.data-table tbody tr:hover{background:rgba(184,69,46,0.04);}
+table.data-table .cell-main{color:var(--ink);font-weight:600;font-size:13.5px;}
+table.data-table .cell-mono{font-family:'JetBrains Mono', monospace;font-size:12px;}
+table.data-table .cell-sub{display:block;font-size:11px;color:var(--ink-soft);font-weight:400;margin-top:1px;}
+table.data-table .status-pill{
+  display:inline-block;
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--matcha);
+  border:1px solid var(--matcha);
+  padding:2px 7px;
+  border-radius:10px;
+  white-space:nowrap;
+}
+@media (max-width:480px){
+  table.data-table{font-size:12px;}
+  table.data-table thead th, table.data-table tbody td{padding:8px 10px;}
+}
+
+/* ---------- FLIGHT CARDS ---------- */
+.flights{display:flex;flex-direction:column;gap:12px;}
+.flight-card{
+  background:var(--paper-deep);
+  border:1px solid var(--line);
+  border-left:4px solid var(--indigo);
+  border-radius:2px;
+  padding:16px 20px;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:16px;
+  align-items:center;
+}
+.flight-card .route{
+  display:flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono', monospace;
+  font-weight:600;
+  font-size:15px;
+  color:var(--indigo-deep);
+}
+.flight-card .route .icon{color:var(--vermillion);}
+.flight-card .detail{font-size:12.5px;color:var(--ink-soft);}
+.flight-card .detail b{color:var(--ink);font-weight:600;}
+.flight-card .time{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  text-align:right;
+  color:var(--ink-soft);
+  white-space:nowrap;
+}
+@media (max-width:600px){
+  .flight-card{grid-template-columns:1fr;text-align:left;}
+  .flight-card .time{text-align:left;}
+}
+
+/* ---------- HOTEL CARDS ---------- */
+.hotels{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+@media (max-width:760px){.hotels{grid-template-columns:1fr;}}
+.hotel-card{
+  background:var(--paper-deep);
+  border:1px solid var(--line);
+  padding:20px;
+  position:relative;
+}
+@media (max-width:480px){
+  .hotel-card{padding:14px;}
+}
+.hotel-card .tag{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--vermillion);
+  margin-bottom:8px;
+  padding-right:64px;
+}
+.hotel-card h3{
+  font-size:17px;margin:0 0 4px;
+  color:var(--indigo-deep);
+}
+.hotel-card .loc{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px;}
+.hotel-card .pts{
+  display:flex;flex-direction:column;gap:2px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  border-top:1px dashed var(--line);
+  padding-top:8px;
+  margin-top:8px;
+  color:var(--ink-soft);
+}
+.hotel-card .pts span{text-transform:uppercase;letter-spacing:0.05em;font-size:10px;}
+.hotel-card .pts b{color:var(--ink);font-size:13px;font-weight:600;}
+.hotel-card.confirmed{border-left:4px solid var(--matcha);}
+.hotel-card .badge{
+  position:absolute;top:16px;right:16px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px;
+  color:var(--matcha);
+  border:1px solid var(--matcha);
+  padding:2px 6px;
+  border-radius:10px;
+  letter-spacing:0.06em;
+  background:var(--paper-deep);
+  white-space:nowrap;
+}
+
+/* ---------- DAY BLOCKS ---------- */
+.city-block{margin-bottom:36px;}
+.city-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:14px;
+}
+.city-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.city-header h3{
+  font-size:19px;margin:0;
+  color:var(--ink);
+}
+.city-header .nights-tag{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  color:var(--ink-soft);
+}
+
+.day-row{
+  display:grid;
+  grid-template-columns:96px 1fr;
+  gap:18px;
+  padding:14px 0;
+  border-top:1px solid var(--line-soft);
+}
+@media (max-width:480px){
+  .day-row{grid-template-columns:64px 1fr;gap:10px;}
+}
+.day-row:first-of-type{border-top:none;}
+.day-date{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  color:var(--ink-soft);
+  padding-top:2px;
+}
+.day-date .dow{display:block;font-size:10px;text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;color:var(--vermillion);}
+.day-title{font-weight:700;font-size:14.5px;margin-bottom:6px;color:var(--indigo-deep);}
+.day-acts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;}
+.day-acts li{
+  display:block;
+  position:relative;
+  padding-left:24px;
+  font-size:13.5px;
+  line-height:1.55;
+  color:var(--ink-soft);
+}
+.day-acts li .icon{
+  position:absolute;
+  left:0;
+  top:3px;
+  color:var(--ink-soft);
+  opacity:0.7;
+}
+.day-acts li b{color:var(--ink);font-weight:600;}
+.map-link{
+  display:inline-block;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  color:var(--indigo);
+  text-decoration:none;
+  border-bottom:1px solid var(--indigo);
+  margin-left:4px;
+  white-space:nowrap;
+}
+.map-link:hover{color:var(--vermillion);border-bottom-color:var(--vermillion);}
+.day-acts li .mono{
+  display:block;
+  margin-top:3px;
+  font-size:12px;
+  color:var(--ink-soft);
+  opacity:0.85;
+}
+
+/* ---------- CITY COLORS ---------- */
+.c-tokyo .city-dot{background:var(--indigo);}
+.c-hakone .city-dot{background:var(--ink-soft);}
+.c-kyoto .city-dot{background:var(--matcha);}
+.c-hanoi .city-dot{background:var(--gold);}
+.c-transit .city-dot{background:var(--vermillion);}
+
+/* ---------- RESTAURANT LIST ---------- */
+.food-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media (max-width:760px){.food-grid{grid-template-columns:1fr;}}
+.food-col h4{
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--vermillion);
+  margin:0 0 10px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+.food-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;}
+.food-col li{font-size:13.5px;}
+.food-col li .name{font-weight:600;color:var(--ink);display:block;}
+.food-col li .note{color:var(--ink-soft);font-size:12px;}
+
+/* ---------- CHECKLIST ---------- */
+.checklist{display:flex;flex-direction:column;gap:0;}
+.check-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:13px 0;
+  border-top:1px solid var(--line-soft);
+}
+.check-item:first-child{border-top:none;}
+.check-box{
+  width:16px;height:16px;
+  border:1.5px solid var(--vermillion);
+  flex-shrink:0;margin-top:2px;
+  border-radius:2px;
+}
+.check-item .t{font-weight:600;font-size:14px;color:var(--ink);}
+.check-item .d{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
+
+/* ---------- TRANSPORT NOTES ---------- */
+.transport-list{display:flex;flex-direction:column;gap:14px;}
+.t-item{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:13.5px;}
+.t-item .icon{margin-top:2px;color:var(--indigo);}
+.t-item b{color:var(--ink);}
+.t-item span.d{color:var(--ink-soft);}
+
+/* ---------- LINKS ---------- */
+.links-list{display:flex;flex-direction:column;gap:0;}
+.link-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:13px 0;
+  border-top:1px solid var(--line-soft);
+}
+.link-item:first-child{border-top:none;}
+.link-item .icon{margin-top:2px;color:var(--vermillion);flex-shrink:0;}
+.link-item a{
+  color:var(--indigo-deep);
+  font-weight:600;
+  font-size:14px;
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+}
+.link-item a:hover{border-bottom-color:var(--vermillion);}
+.link-item .d{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
+
+/* ---------- FOOTER ---------- */
+.footer{
+  margin-top:70px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  text-align:center;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;
+  color:var(--ink-soft);
+  letter-spacing:0.05em;
+}
+</style>
+</head>
+<body>
+
+<!-- icon sprite defs -->
+<svg style="display:none">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 21l1.5-6.5L4 12l1-2 8-1.5L15.5 3c.3-.9 1.7-.9 2 0l1.5 5 5 1v2l-5 1-1 6.5-2-1-1 3-1.5-1.5L11 21l-.5-.5z"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18v-8a2 2 0 012-2h5a2 2 0 012 2v2M3 18v3M3 18h18v3M21 18v-4a2 2 0 00-2-2h-5"/><circle cx="7" cy="10" r="1.3"/></symbol>
+  <symbol id="i-fork" viewBox="0 0 24 24"><path d="M7 3v7a2 2 0 002 2h0a2 2 0 002-2V3M7 3v3M9 3v3M11 3v3M9 12v9M17 3c-1.5 0-2.5 2-2.5 5s1 5 2.5 5v9"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="13" rx="3"/><path d="M5 12h14M8 17l-2 3M16 17l2 3"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/></symbol>
+  <symbol id="i-onsen" viewBox="0 0 24 24"><path d="M3 17c1.2 0 1.2-1.5 2.4-1.5S6.6 17 7.8 17s1.2-1.5 2.4-1.5S11.4 17 12.6 17s1.2-1.5 2.4-1.5S16.2 17 17.4 17s1.2-1.5 2.4-1.5"/><path d="M8 4c-1.2 1.5-1.2 2.5 0 4M12 3c-1.2 1.5-1.2 2.5 0 4"/><path d="M3 20c1.2 0 1.2-1.3 2.4-1.3S6.6 20 7.8 20s1.2-1.3 2.4-1.3S11.4 20 12.6 20s1.2-1.3 2.4-1.3S16.2 20 17.4 20s1.2-1.3 2.4-1.3"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2h7L17 8h3v11H4V8z"/><circle cx="12" cy="13.5" r="3.2"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 119.5 4 6.5 6.5 0 0020 14.5z"/></symbol>
+  <symbol id="i-suit" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M4 12h16"/></symbol>
+  <symbol id="i-taxi" viewBox="0 0 24 24"><path d="M4 16V9l2-4h12l2 4v7"/><path d="M4 16h16M6 16v2M18 16v2"/><circle cx="7.5" cy="16" r="1"/><circle cx="16.5" cy="16" r="1"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1.5 1.5"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1.5-1.5"/></symbol>
+</svg>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Trip Itinerary &nbsp;·&nbsp; Couple's Journey</div>
+    <h1>Japan, Vietnam<br>&amp; a Taipei Sunset</h1>
+    <div class="route-line"><b>Tokyo</b> → <b>Hakone</b> → <b>Kyoto</b> <span class="mono" style="font-size:0.85em;">(+ Osaka day)</span> → <b>Hanoi</b> → <b>Taipei</b> transit</div>
+    <div class="dates">
+      <span>SFO DEP</span><span class="sep">✈</span><span>AUG 5</span>
+      <span style="opacity:0.4">|</span>
+      <span>SFO RTN</span><span class="sep">✈</span><span>AUG 19</span>
+      <span style="opacity:0.4">|</span>
+      <span>14 NIGHTS</span>
+    </div>
+  </div>
+
+  <!-- ROUTE STAMPS -->
+  <div class="route-map">
+    <div class="stamp"><span class="city">Tokyo</span><span class="nights">4 nights</span></div>
+    <div class="route-arrow"></div>
+    <div class="stamp"><span class="city">Hakone</span><span class="nights">1 night</span></div>
+    <div class="route-arrow"></div>
+    <div class="stamp"><span class="city">Kyoto</span><span class="nights">3 nights</span></div>
+    <div class="route-arrow"></div>
+    <div class="stamp"><span class="city">Hanoi</span><span class="nights">3 nights</span></div>
+    <div class="route-arrow"></div>
+    <div class="stamp"><span class="city">Taipei</span><span class="nights">transit</span></div>
+  </div>
+
+  <!-- FLIGHTS -->
+  <div class="section">
+    <div class="section-head"><span class="num">01</span><h2>Flights</h2></div>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Route</th>
+            <th>Flight</th>
+            <th>Departs</th>
+            <th>Arrives</th>
+            <th>Confirmation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wed, Aug 5 → Thu, Aug 6</td>
+            <td class="cell-main">SFO → HND</td>
+            <td class="cell-mono">JL 1<span class="cell-sub">Japan Airlines, nonstop, Boeing 777-300, Business</span></td>
+            <td class="cell-mono">12:25 PM</td>
+            <td class="cell-mono">3:05 PM</td>
+            <td class="cell-mono">QFTPEL<span class="cell-sub">JAL conf: BI65GY</span></td>
+          </tr>
+          <tr>
+            <td>Sat, Aug 15</td>
+            <td class="cell-main">KIX → HAN</td>
+            <td class="cell-mono">VN335<span class="cell-sub">Vietnam Airlines, nonstop</span></td>
+            <td class="cell-mono">10:00 AM</td>
+            <td class="cell-mono">1:00 PM</td>
+            <td class="cell-mono">FMS6VP</td>
+          </tr>
+          <tr>
+            <td>Tue, Aug 18</td>
+            <td class="cell-main">HAN → TPE</td>
+            <td class="cell-mono">JX716<span class="cell-sub">STARLUX, direct</span></td>
+            <td class="cell-mono">11:10 AM</td>
+            <td class="cell-mono">3:00 PM</td>
+            <td class="cell-mono">FW2IPM</td>
+          </tr>
+          <tr>
+            <td>Wed, Aug 19</td>
+            <td class="cell-main">TPE → SFO</td>
+            <td class="cell-mono">JX 12<span class="cell-sub">STARLUX, A350-900</span></td>
+            <td class="cell-mono">12:05 AM</td>
+            <td class="cell-mono">9:00 PM</td>
+            <td class="cell-mono">JEQWPX</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- HOTELS -->
+
+  <div class="section">
+    <div class="section-head"><span class="num">02</span><h2>Hotels</h2></div>
+    <div class="section-sub">Value-tier Hyatt picks in Japan, Amex Hotel Collection in Hanoi.</div>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Hotel</th>
+            <th>Check-in</th>
+            <th>Check-out</th>
+            <th>Confirmation</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tokyo</td>
+            <td class="cell-main">Hyatt Regency Tokyo<span class="cell-sub">Shinjuku</span></td>
+            <td class="cell-mono">Aug 6, 2:00 PM</td>
+            <td class="cell-mono">Aug 7, 11:00 AM</td>
+            <td class="cell-mono">40023B24194029</td>
+            <td><span class="status-pill">Booked</span></td>
+          </tr>
+          <tr>
+            <td>Tokyo</td>
+            <td class="cell-main">Hyatt Regency Tokyo<span class="cell-sub">Shinjuku</span></td>
+            <td class="cell-mono">Aug 7, 2:00 PM</td>
+            <td class="cell-mono">Aug 11, 11:00 AM</td>
+            <td class="cell-mono">1034692242</td>
+            <td><span class="status-pill">Booked</span></td>
+          </tr>
+          <tr>
+            <td>Hakone</td>
+            <td class="cell-main">Hakone Kowakien Tenyu<span class="cell-sub">Ryokan, onsen &amp; kaiseki</span></td>
+            <td class="cell-mono">Aug 11</td>
+            <td class="cell-mono">Aug 12</td>
+            <td class="cell-mono">T55D70E49F582</td>
+            <td><span class="status-pill">Confirmed</span></td>
+          </tr>
+          <tr>
+            <td>Kyoto</td>
+            <td class="cell-main">Hyatt Place Kyoto<span class="cell-sub">Near Kyoto Imperial Palace</span></td>
+            <td class="cell-mono">Aug 12, 3:00 PM</td>
+            <td class="cell-mono">Aug 15, 12:00 PM</td>
+            <td class="cell-mono">58255461</td>
+            <td><span class="status-pill">Booked</span></td>
+          </tr>
+          <tr>
+            <td>Hanoi</td>
+            <td class="cell-main">Meliá Hanoi<span class="cell-sub">Amex Hotel Collection, 3rd night comp</span></td>
+            <td class="cell-mono">Aug 15, 2:00 PM</td>
+            <td class="cell-mono">Aug 18, 12:00 PM</td>
+            <td class="cell-mono">ZO-AX1070-46324</td>
+            <td><span class="status-pill">Booked</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- WEATHER -->
+  <div class="section">
+    <div class="section-head"><span class="num">03</span><h2>Weather &amp; What It Means</h2></div>
+    <div class="section-sub">August is the hottest, wettest month across this entire route. Two things genuinely affect plans: heat in Japan, and typhoon risk in Vietnam.</div>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Leg</th>
+            <th>Temps</th>
+            <th>Conditions</th>
+            <th>Planning impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cell-main">Tokyo<span class="cell-sub">Aug 6–11</span></td>
+            <td class="cell-mono">26–33°C<span class="cell-sub">feels 38–42°C</span></td>
+            <td>Hot, humid, ~7 rainy days</td>
+            <td>Outdoor stuff before 9 AM or after 6:30 PM</td>
+          </tr>
+          <tr>
+            <td class="cell-main">Hakone<span class="cell-sub">Aug 11–12</span></td>
+            <td class="cell-mono">Cooler at elevation</td>
+            <td>Mountain air, some rain</td>
+            <td>Best-timed stop on the trip — indoors and onsen anyway</td>
+          </tr>
+          <tr>
+            <td class="cell-main">Kyoto / Osaka<span class="cell-sub">Aug 12–15</span></td>
+            <td class="cell-mono">24–35°C<span class="cell-sub">hottest of the Japan leg</span></td>
+            <td>Kyoto's basin geography traps heat</td>
+            <td>Fushimi Inari early is essential, not optional. Obon Aug 13–16 = crowds</td>
+          </tr>
+          <tr>
+            <td class="cell-main">Hanoi<span class="cell-sub">Aug 15–18</span></td>
+            <td class="cell-mono">26–33°C<span class="cell-sub">~82% humidity</span></td>
+            <td>Wettest month — 275–310mm, 15–22 rainy days, peak typhoon season</td>
+            <td>Cruise cancellation risk is real. Keep indoor backups ready</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:14px;padding:12px 16px;border-left:3px solid var(--vermillion);background:var(--paper-deep);font-size:13px;color:var(--ink-soft);line-height:1.55;">
+      <b style="color:var(--ink);">Ha Long / Lan Ha Bay cruise — genuine risk:</b> late July to mid-September is the peak of northern Vietnam's typhoon season, and bay sailings get pulled on 12–24 hours' notice when a storm enters the Gulf of Tonkin. Vietnam's forecasting center flagged 3–4 significant systems possible for August alone. Two things worth doing before departure: confirm Hera's cancellation and refund terms, and keep <b>Ninh Binh</b> in your back pocket — it's inland, largely unaffected by bay closures, and was the original plan for that day.
+    </div>
+    <div style="margin-top:12px;padding:12px 16px;border-left:3px solid var(--gold);background:var(--paper-deep);font-size:13px;color:var(--ink-soft);line-height:1.55;">
+      <b style="color:var(--ink);">Obon overlap:</b> Japan's Obon holiday falls Aug 13–16 this year, right across your Kyoto stay and Osaka day trip. Expect heavier domestic crowds at Fushimi Inari, Nara, and Dotonbori, and book restaurants further ahead than usual. Trains between Kyoto and Osaka will also be busier than normal.
+    </div>
+  </div>
+
+  <!-- DAY BY DAY -->
+  <div class="section">
+    <div class="section-head"><span class="num">04</span><h2>Day by Day</h2></div>
+
+    <div class="city-block c-tokyo">
+      <div class="city-header"><span class="city-dot"></span><h3>Tokyo</h3><span class="nights-tag">Hyatt Regency Tokyo, Shinjuku</span></div>
+
+      <div class="day-row">
+        <div class="day-date">AUG 6<span class="dow">Thu</span></div>
+        <div>
+          <div class="day-title">Direct arrival</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-plane"/></svg>JL 1 arrives HND 3:05 PM, direct from SFO</li>
+            <li><svg class="icon"><use href="#i-bag"/></svg>Grab Suica cards at an HND kiosk or vending machine before heading out — makes every train, bus, and konbini stop for the rest of Japan easier</li>
+            <li><svg class="icon"><use href="#i-taxi"/></svg>Check into Hyatt Regency Tokyo, 2:00 PM</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Easy dinner near the hotel, early rest</li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 7<span class="dow">Fri</span></div>
+        <div>
+          <div class="day-title">Coffee, ramen, settle in</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-taxi"/></svg>Second reservation picks up at the same hotel — may involve a room change</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg><b>Breakfast: Komeda's Coffee Shinjuku First West</b> — highest-rated Komeda's near the hotel (4.1), opens 7 AM<a class="map-link" href="https://maps.google.com/?cid=9671672688631733535" target="_blank">Map</a></li>
+            <li><svg class="icon"><use href="#i-fork"/></svg><b>Ramen: Kamo to Negi, EATo Lumine</b> — duck &amp; green onion broth, Tabelog 3.59, inside JR Shinjuku Station's west ticket gates, B1, opens 8 AM<a class="map-link" href="https://maps.google.com/?cid=10789501279520490591" target="_blank">Map</a></li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>With a day already recovered from jet lag, this is a good first real day to wander Shinjuku at an easy pace</li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 8<span class="dow">Sat</span></div>
+        <div>
+          <div class="day-title">Modern Tokyo</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-fork"/></svg>Tonkatsu lunch — pick from the food checklist below</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Depachika stop at Isetan Shinjuku food hall (B1–B2)</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Dinner — open slot, good spot for tonkatsu, curry, or izakaya from the food checklist</li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 9<span class="dow">Sun</span></div>
+        <div>
+          <div class="day-title">Shopping &amp; Neapolitan pizza</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-fork"/></svg><b>Lunch: Katsu Midori, Shibuya</b> — conveyor belt sushi, Seibu Shibuya 8F, genuinely a cut above standard kaiten-zushi</li>
+            <li><svg class="icon"><use href="#i-bag"/></svg>Omotesando + Harajuku, then Ginza browsing</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg><b>Japanese curry: Ginza Swiss</b> (3.70) — where katsu curry was invented in 1948, for a Yomiuri Giants player. Yoshoku-style roux, no Indian spice. <span class="mono">Tabelog lists it as relocated — confirm the address first.</span></li>
+            <li><svg class="icon"><use href="#i-fork"/></svg><b>Dinner booked: SAVOY Azabu-Juban</b> — 8:30 PM, counter seating for 2.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 10<span class="dow">Mon</span></div>
+        <div>
+          <div class="day-title">Skyline &amp; neighborhoods</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-fork"/></svg><b>Lunch: Maguro to Shari, Shibuya</b> — tuna-focused kaisendon, overseen by Hakkoku's Hiroyuki Sato, red vinegar rice</li>
+            <li><svg class="icon"><use href="#i-cam"/></svg>Shibuya Sky observation deck — book timed entry online</li>
+            <li><svg class="icon"><use href="#i-bag"/></svg>Wander Daikanyama / Nakameguro</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg><b>Dinner: Nikuya Yokocho, Udagawacho (Shibuya)</b> — 6:30 PM, confirmed for 2, 90-min seating. Convenient since you're already in Shibuya for Shibuya Sky.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="city-block c-hakone">
+      <div class="city-header"><span class="city-dot"></span><h3>Hakone</h3><span class="nights-tag">Hakone Kowakien Tenyu — confirmed</span></div>
+      <div class="day-row">
+        <div class="day-date">AUG 11<span class="dow">Tue</span></div>
+        <div>
+          <div class="day-title">Onsen &amp; kaiseki — the highlight night</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-train"/></svg>Romancecar "Hakone 21" (GSE), 1:20 PM Shinjuku → 2:48 PM Hakone-Yumoto, seats 6C/6D, Car 1</li>
+            <li><svg class="icon"><use href="#i-suit"/></svg>Send main luggage ahead to Kyoto via takkyubin — travel light for this leg</li>
+            <li><svg class="icon"><use href="#i-onsen"/></svg>Check in, onsen soak, kaiseki dinner — no other plans today</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="city-block c-kyoto">
+      <div class="city-header"><span class="city-dot"></span><h3>Kyoto <span class="mono" style="font-weight:400;font-size:0.6em;color:var(--ink-soft);">+ Nara &amp; Osaka day trips</span></h3><span class="nights-tag">Hyatt Place Kyoto</span></div>
+
+      <div class="day-row">
+        <div class="day-date">AUG 12<span class="dow">Wed</span></div>
+        <div>
+          <div class="day-title">Into Kyoto</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-train"/></svg>Odawara → Kyoto by Shinkansen</li>
+            <li><svg class="icon"><use href="#i-bag"/></svg>Gentle Nishiki Market walk on arrival — also where Kyoto's knife shops (Aritsugu and others) are clustered, worth browsing if the timing works</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Easy kaiseki or ramen dinner</li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 13<span class="dow">Thu</span></div>
+        <div>
+          <div class="day-title">Fushimi Inari + Nara</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-sun"/></svg>Fushimi Inari <b>early — aim for 7 AM</b>. It's an exposed uphill climb, and by 10 AM you'd be doing it in 33°C heat plus Obon crowds. Same JR Nara Line continues on to Nara</li>
+            <li><svg class="icon"><use href="#i-train"/></svg>Continue on to <b>Nara</b> — Kintetsu or JR from Kyoto is ~35–45 min, deer park and Tōdai-ji make for an easy self-contained midday</li>
+            <li><svg class="icon"><use href="#i-cam"/></svg>If timing allows, <b>Nara Tōkae</b> lantern festival runs through Aug 14, 7:00–9:30 PM — worth a look if you're not rushing back</li>
+            <li><svg class="icon"><use href="#i-moon"/></svg>Back to Kyoto — <b>okonomiyaki at Gion Negiyaki Kana Higashi-ten</b>, Tabelog's highest-rated in the area (3.67) and a much shorter wait than the walk-in-only Gion Tanto. <span class="mono" style="font-size:0.85em;">Backup: Nishiki Warai (Nishiki Honten), right on the Nishiki Market walk if plans change.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 14<span class="dow">Fri</span></div>
+        <div>
+          <div class="day-title">Osaka, for the day</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-train"/></svg>Shinkansen to Osaka — 15 minutes each way, base stays in Kyoto</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Kuromon Market late breakfast, then <b>okonomiyaki at Fukutaro Honten</b> (5 min away) — one of Osaka's "big three," Michelin Bib Gourmand. Continue into Dotonbori for takoyaki, kushikatsu</li>
+            <li><svg class="icon"><use href="#i-bag"/></svg>Amerikamura shopping, back to Kyoto by late afternoon</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Matcha dessert evening in Kyoto — this is also your last chance for a Nishiki Market pass, since Aug 15 morning is an early airport departure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="city-block c-transit">
+      <div class="city-header"><span class="city-dot"></span><h3>Kyoto → Osaka → Hanoi</h3><span class="nights-tag">Travel day</span></div>
+      <div class="day-row">
+        <div class="day-date">AUG 15<span class="dow">Sat</span></div>
+        <div>
+          <div class="day-title">Early start, first Hanoi night</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-taxi"/></svg>10 AM departure means an early wake-up — leave Kyoto by ~6:30 AM for KIX, no time for a last Nishiki Market pass this morning</li>
+            <li><svg class="icon"><use href="#i-plane"/></svg>Vietnam Airlines VN335, 10:00 AM → 1:00 PM Hanoi</li>
+            <li><svg class="icon"><use href="#i-fork"/></svg>Afternoon arrival — check in, then egg coffee and light street food in the Old Quarter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="city-block c-hanoi">
+      <div class="city-header"><span class="city-dot"></span><h3>Hanoi</h3><span class="nights-tag">Meliá Hanoi</span></div>
+      <div class="day-row">
+        <div class="day-date">AUG 16<span class="dow">Sun</span></div>
+        <div>
+          <div class="day-title">Lan Ha Bay &amp; Ha Long Bay day cruise</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-cam"/></svg>Hera Luxury Day Cruise, VIP limousine pickup from Hanoi, 11:00 AM – 5:45 PM. <span class="mono">Check the forecast the night before — bay sailings cancel on short notice in typhoon season. Ninh Binh is the inland fallback.</span></li>
+            <li><svg class="icon"><use href="#i-onsen"/></svg><b>Massage</b> back at the hotel spa or a nearby Old Quarter spa — good timing after a long day trip, before heading back out</li>
+            <li><svg class="icon"><use href="#i-moon"/></svg>Cocktails in the Hoan Kiem area on return</li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 17<span class="dow">Mon</span></div>
+        <div>
+          <div class="day-title">Full food day</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-fork"/></svg>Pho breakfast, bun cha lunch, Old Quarter street food wander</li>
+            <li><svg class="icon"><use href="#i-bag"/></svg>Hang Gai silk street, Dong Xuan Market</li>
+            <li><svg class="icon"><use href="#i-moon"/></svg>Craft cocktail bar in the evening</li>
+          </ul>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-date">AUG 18<span class="dow">Tue</span></div>
+        <div>
+          <div class="day-title">Onward to Taipei</div>
+          <ul class="day-acts">
+            <li><svg class="icon"><use href="#i-fork"/></svg>Morning in Hanoi — breakfast, pack up, still an earlier start given the flight</li>
+            <li><svg class="icon"><use href="#i-plane"/></svg>STARLUX JX716, direct, 11:10 AM HAN → 3:00 PM TPE</li>
+            <li><svg class="icon"><use href="#i-plane"/></svg>~9hr buffer before the SFO flight — an easy dinner near the airport works, no need to rush into the city given the transit-only plan</li>
+            <li><svg class="icon"><use href="#i-plane"/></svg>TPE → SFO at 12:05 AM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RESTAURANTS -->
+  <div class="section">
+    <div class="section-head"><span class="num">05</span><h2>Restaurant Highlights</h2></div>
+    <div class="food-grid">
+      <div class="food-col">
+        <h4>Tokyo</h4>
+        <ul>
+          <li><span class="name">Komeda's Coffee, Shinjuku First West</span><span class="note">Breakfast, Aug 7, 4.1 rating<a class="map-link" href="https://maps.google.com/?cid=9671672688631733535" target="_blank">Map</a></span></li>
+          <li><span class="name">Kamo to Negi, EATo Lumine</span><span class="note">Duck ramen, Aug 7, Tabelog 3.59, inside Shinjuku Station<a class="map-link" href="https://maps.google.com/?cid=10789501279520490591" target="_blank">Map</a></span></li>
+          <li><span class="name">SAVOY Azabu-Juban <span class="mono" style="font-size:0.7em;color:var(--matcha);">BOOKED</span></span><span class="note">Neapolitan pizza, Aug 9 8:30 PM, counter for 2</span></li>
+          <li><span class="name">Omakase sushi</span><span class="note">Ginza or Shinjuku — book for a different night, weeks out</span></li>
+          <li><span class="name">Nikuya Yokocho, Udagawacho (Shibuya) <span class="mono" style="font-size:0.7em;color:var(--matcha);">BOOKED</span></span><span class="note">AYCE wagyu, whole-cow butcher showcase — the one you loved last time, Aug 10 dinner</span></li>
+          <li><span class="name">Katsu Midori, Shibuya</span><span class="note">Conveyor belt sushi, Seibu Shibuya 8F, Aug 9 lunch</span></li>
+          <li><span class="name">Maguro to Shari, Shibuya</span><span class="note">Tuna-focused kaisendon, red vinegar rice, Aug 10 lunch</span></li>
+          <li><span class="name">Ginza Swiss</span><span class="note">Yoshoku curry, Tabelog 3.70 — Aug 9, birthplace of katsu curry</span></li>
+          <li><span class="name">Bondy / Kitchen Nankai</span><span class="note">Curry alternatives in Jimbocho ("Curry Street")</span></li>
+          <li><span class="name">Isetan Shinjuku depachika</span><span class="note">B1–B2 food hall, unmissable</span></li>
+        </ul>
+      </div>
+      <div class="food-col">
+        <h4>Kyoto</h4>
+        <ul>
+          <li><span class="name">Nishiki Market</span><span class="note">Tofu, pickles, matcha ice cream</span></li>
+          <li><span class="name">Gion Negiyaki Kana Higashi-ten</span><span class="note">Okonomiyaki, Tabelog 3.67 — Aug 13 dinner</span></li>
+          <li><span class="name">Nishiki Warai (Nishiki Honten)</span><span class="note">Backup okonomiyaki, right on the Nishiki Market walk (Tabelog 3.08)</span></li>
+          <li><span class="name">Fukutaro Honten, Osaka</span><span class="note">Okonomiyaki, near Kuromon Market — Aug 14 day trip</span></li>
+          <li><span class="name">Gion kaiseki</span><span class="note">Intimate, book ahead for evening</span></li>
+        </ul>
+      </div>
+      <div class="food-col">
+        <h4>Hanoi</h4>
+        <ul>
+          <li><span class="name">Bun Cha Huong Lien</span><span class="note">The "Obama restaurant" — genuinely excellent</span></li>
+          <li><span class="name">Pho Gia Truyen Bat Dan</span><span class="note">Morning pho</span></li>
+          <li><span class="name">Cafe Giang</span><span class="note">Original egg coffee</span></li>
+          <li><span class="name">Nê Cocktail Bar</span><span class="note">Evening drinks</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOD CHECKLIST -->
+  <div class="section">
+    <div class="section-head"><span class="num">06</span><h2>Food Checklist</h2></div>
+    <div class="section-sub">The must-eat list for this trip — check these off as you go.</div>
+    <div class="checklist">
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Okonomiyaki — slotted in</div><div class="d">Gion Negiyaki Kana Higashi-ten, Kyoto (Aug 13) + Fukutaro Honten, Osaka (Aug 14)</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Tonkatsu</div><div class="d">Tokyo — good fit for the Aug 8 or Aug 10 lunch window</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Japanese curry — yoshoku style, not Indian</div><div class="d"><b>Ginza Swiss</b> (3.70, Ginza — slotted into Aug 9, birthplace of katsu curry). Jimbocho alternatives if you want to make an afternoon of "Curry Street": <b>Bondy</b> (creamy European-style, Kanda Curry Grand Prix winner, est. 1973) or <b>Kitchen Nankai</b> (casual, black curry, also claims katsu curry origin).</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Yakiniku — booked</div><div class="d">Nikuya Yokocho, Udagawacho (Shibuya), Aug 10 dinner</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Omakase (or sushi)</div><div class="d">Tokyo — hotel concierge or Tableall</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Train sushi — slotted in</div><div class="d">Katsu Midori, Shibuya (Seibu Shibuya, 8F), Aug 9 lunch</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Age.3 cream sandwich</div><div class="d">Ginza flagship, plus newer Asakusa and Harajuku locations — expect a line. Similar shops if you want to compare: <b>FRUITS SAND THREE</b> (the Fukuoka original Age.3 grew out of), <b>Ginza Sand</b>, and <b>Hatoya's Vegan Fruit Sandwiches</b> for a dairy-free take.</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Crab king — Osaka</div><div class="d"><b>Kani Doraku</b> (the giant mechanical crab sign in Dotonbori) is the iconic pick, good fit for the Aug 14 Osaka day trip. <b>Kanisuki Doraku Zuboraya</b> nearby is the other well-known Dotonbori crab house if you want a second option or backup.</div></div></div>
+    </div>
+  </div>
+
+  <!-- BOOKING CHECKLIST -->
+  <div class="section">
+    <div class="section-head"><span class="num">07</span><h2>Bookings &amp; Confirmations</h2></div>
+    <div class="checklist">
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Hyatt Regency Tokyo — booked</div><div class="d">Aug 6–7 (free night, conf #40023B24194029) + Aug 7–11 (conf #1034692242) — full Aug 6–11 span covered</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Romancecar "Hakone 21" — booked</div><div class="d">Tue, Aug 11, 1:20 PM Shinjuku → 2:48 PM Hakone-Yumoto, seats 6C/6D, control #E447</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">JL 1, SFO → HND — booked</div><div class="d">Wed Aug 5 → Thu Aug 6, direct, Business class, conf QFTPEL (JAL conf BI65GY)</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Meliá Hanoi — booked</div><div class="d">Aug 15–18 via Amex Hotel Collection, complimentary 3rd night applied</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">VN335, KIX → HAN — booked</div><div class="d">Sat, Aug 15, 10:00 AM → 1:00 PM</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">JX716, HAN → TPE — booked</div><div class="d">Tue, Aug 18, direct, 11:10 AM → 3:00 PM</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Nikuya Yokocho, Udagawacho — booked</div><div class="d">Mon, Aug 10, 6:30 PM, party of 2, conf #W25ZKFJ6W4</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">SAVOY Azabu-Juban — booked</div><div class="d">Sun, Aug 9, 8:30 PM, counter seating for 2, via AutoReserve</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Omakase sushi, Tokyo</div><div class="d">Top spots need 1–3 months lead time — use hotel concierge, Tableall, or Omakase.com</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Shibuya Sky</div><div class="d">Timed entry — book at shibuyasky.jp</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Hera Luxury Day Cruise — booked</div><div class="d">Sun, Aug 16, Lan Ha Bay &amp; Ha Long Bay, VIP limousine from Hanoi, booking #20260816-513078-1260149940</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Confirm Hera cancellation / refund terms</div><div class="d">Peak typhoon season — worth knowing the policy before departure in case the bay closes</div></div></div>
+      <div class="check-item"><span class="check-box"></span><div><div class="t">Massage, Hanoi</div><div class="d">Book hotel spa or nearby Old Quarter spa for evening of Aug 16, after the cruise</div></div></div>
+      <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Hyatt Place Kyoto — booked</div><div class="d">Aug 12–15, confirmation #58255461</div></div></div>
+    </div>
+  </div>
+
+  <!-- TRANSPORT -->
+  <div class="section">
+    <div class="section-head"><span class="num">08</span><h2>Transport Notes</h2></div>
+    <div class="transport-list">
+      <div class="t-item"><svg class="icon"><use href="#i-bag"/></svg><div><b>Suica cards:</b> <span class="d">pick up at an HND kiosk or vending machine on arrival — covers trains, buses, and konbini purchases everywhere in Japan, no need to buy individual tickets</span></div></div>
+      <div class="t-item"><svg class="icon"><use href="#i-taxi"/></svg><div><b>HND → hotel:</b> <span class="d">taxi or Limousine Bus, skip trains after the long flight in</span></div></div>
+      <div class="t-item"><svg class="icon"><use href="#i-train"/></svg><div><b>Tokyo → Hakone:</b> <span class="d">Booked — Romancecar "Hakone 21," 1:20 PM Shinjuku → 2:48 PM Hakone-Yumoto, seats 6C/6D, control #E447</span></div></div>
+      <div class="t-item"><svg class="icon"><use href="#i-suit"/></svg><div><b>Luggage forwarding:</b> <span class="d">ship main bags from Tokyo hotel to Kyoto hotel via takkyubin (Yamato Transport) the day before Hakone — travel light with just an overnight bag</span></div></div>
+      <div class="t-item"><svg class="icon"><use href="#i-train"/></svg><div><b>Hakone → Kyoto:</b> <span class="d">train to Odawara, then Shinkansen to Kyoto — about an hour total</span></div></div>
+      <div class="t-item"><svg class="icon"><use href="#i-train"/></svg><div><b>Kyoto ↔ Osaka:</b> <span class="d">Shinkansen, ~15 min each way — day trip, no hotel change needed</span></div></div>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <div class="section">
+    <div class="section-head"><span class="num">09</span><h2>Links &amp; References</h2></div>
+    <div class="links-list">
+      <div class="link-item">
+        <svg class="icon"><use href="#i-link"/></svg>
+        <div>
+          <a href="https://whereandwander.com/kyoto-japanese-knife-buying-guide/" target="_blank">Kyoto Japanese Knife Buying Guide</a>
+          <div class="d">Where &amp; Wander — reference for the knife shopping stop at Nishiki Market (Aritsugu and others)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">TOKYO · HAKONE · KYOTO · OSAKA · HANOI · TAIPEI &nbsp;—&nbsp; AUG 5–19, 2026</div>
+
+</div>
+</body>
+</html>
