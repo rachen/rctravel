@@ -481,6 +481,202 @@ table.data-table .status-pill{
 .link-item a:hover{border-bottom-color:var(--vermillion);}
 .link-item .d{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
 
+/* ---------- TOPBAR & NAV ---------- */
+body{padding-top:52px;}
+.topbar{
+  position:fixed;top:0;left:0;right:0;
+  height:52px;
+  background:var(--paper-deep);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 14px;
+  z-index:200;
+}
+.topbar .tb-title{
+  font-family:'Shippori Mincho', serif;
+  font-weight:700;
+  font-size:15px;
+  color:var(--indigo-deep);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.topbar .tb-day{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px;
+  color:var(--vermillion);
+  letter-spacing:0.05em;
+  display:block;
+  margin-top:1px;
+}
+.hamburger{
+  width:38px;height:38px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  border-radius:6px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;
+  flex-shrink:0;
+  cursor:pointer;
+}
+.hamburger span{display:block;width:18px;height:2px;background:var(--ink);border-radius:1px;transition:transform 0.2s, opacity 0.2s;}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+.nav-backdrop{
+  position:fixed;inset:0;
+  background:rgba(24,42,61,0.45);
+  z-index:250;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.2s;
+}
+.nav-backdrop.open{opacity:1;pointer-events:auto;}
+
+.nav-drawer{
+  position:fixed;top:0;right:0;bottom:0;
+  width:min(320px, 84vw);
+  background:var(--paper);
+  border-left:1px solid var(--line);
+  z-index:260;
+  transform:translateX(100%);
+  transition:transform 0.25s ease;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:16px 0 40px;
+}
+.nav-drawer.open{transform:translateX(0);}
+.nav-drawer-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 16px 14px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:6px;
+}
+.nav-drawer-head .nd-title{font-family:'Shippori Mincho', serif;font-weight:700;font-size:16px;color:var(--indigo-deep);}
+.nav-close{
+  width:32px;height:32px;border:none;background:none;
+  font-size:20px;color:var(--ink-soft);cursor:pointer;line-height:1;
+}
+.nav-section-label{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--vermillion);
+  padding:14px 16px 6px;
+}
+.nav-link{
+  display:block;
+  padding:10px 16px;
+  font-size:14px;
+  color:var(--ink);
+  text-decoration:none;
+  border-left:3px solid transparent;
+}
+.nav-link:active, .nav-link.nav-active{background:var(--paper-deep);border-left-color:var(--vermillion);}
+.nav-day-link{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 16px 8px 24px;
+  font-size:13px;
+  color:var(--ink-soft);
+  text-decoration:none;
+  border-left:3px solid transparent;
+}
+.nav-day-link:active{background:var(--paper-deep);}
+.nav-day-link .nd-date{font-family:'JetBrains Mono', monospace;color:var(--ink);}
+.nav-day-link.is-today{border-left-color:var(--vermillion);}
+.nav-day-link.is-today .nd-date{color:var(--vermillion);font-weight:700;}
+.nav-today-badge{
+  font-family:'JetBrains Mono', monospace;
+  font-size:8.5px;
+  color:var(--paper);
+  background:var(--vermillion);
+  padding:1px 5px;
+  border-radius:8px;
+  letter-spacing:0.05em;
+}
+
+/* Today FAB */
+.today-fab{
+  position:fixed;
+  right:16px;bottom:20px;
+  z-index:190;
+  background:var(--vermillion);
+  color:var(--paper);
+  border:none;
+  border-radius:999px;
+  padding:12px 18px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  box-shadow:0 4px 14px rgba(184,69,46,0.4);
+  display:flex;align-items:center;gap:6px;
+  cursor:pointer;
+}
+.today-fab svg{width:14px;height:14px;stroke:var(--paper);fill:none;stroke-width:2;}
+
+/* Today highlight in day-by-day */
+.day-row.is-today{
+  background:rgba(184,69,46,0.06);
+  margin:0 -14px;padding:14px;
+  border-radius:6px;
+  border-top:1px solid var(--line-soft) !important;
+}
+.day-row.is-today .day-date{position:relative;}
+.today-pill{
+  display:inline-block;
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px;
+  color:var(--paper);
+  background:var(--vermillion);
+  padding:2px 6px;
+  border-radius:8px;
+  letter-spacing:0.05em;
+  margin-top:4px;
+}
+
+/* Today-at-a-glance card */
+.glance-card{
+  display:none;
+  margin:0 24px 40px;
+  background:var(--indigo-deep);
+  border-radius:10px;
+  padding:18px 20px;
+  color:var(--paper);
+}
+@media (max-width:480px){.glance-card{margin:0 16px 32px;}}
+.glance-card.show{display:block;}
+.glance-card .gc-label{
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+  color:#E8A585;
+  margin-bottom:4px;
+}
+.glance-card .gc-title{
+  font-family:'Shippori Mincho', serif;
+  font-size:19px;font-weight:700;
+  margin-bottom:12px;
+}
+.glance-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.glance-card li{
+  font-size:13px;line-height:1.5;
+  color:rgba(244,238,225,0.9);
+  padding-left:20px;position:relative;
+}
+.glance-card li::before{
+  content:'→';
+  position:absolute;left:0;top:0;
+  color:#E8A585;
+}
+.glance-card li b{color:var(--paper);}
+.glance-card a{color:#E8A585;}
+.glance-card .gc-link{
+  display:inline-block;margin-top:14px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11px;color:#E8A585;
+  text-decoration:none;
+  border-bottom:1px solid rgba(232,165,133,0.5);
+}
+
 /* ---------- FOOTER ---------- */
 .footer{
   margin-top:70px;
@@ -510,9 +706,53 @@ table.data-table .status-pill{
   <symbol id="i-suit" viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M4 12h16"/></symbol>
   <symbol id="i-taxi" viewBox="0 0 24 24"><path d="M4 16V9l2-4h12l2 4v7"/><path d="M4 16h16M6 16v2M18 16v2"/><circle cx="7.5" cy="16" r="1"/><circle cx="16.5" cy="16" r="1"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1.5 1.5"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1.5-1.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h16"/></symbol>
 </svg>
 
-<div class="wrap">
+<!-- TOPBAR -->
+<div class="topbar">
+  <div>
+    <div class="tb-title">Japan · Vietnam · Taiwan</div>
+    <span class="tb-day" id="tbDay"></span>
+  </div>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- NAV DRAWER -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+<nav class="nav-drawer" id="navDrawer">
+  <div class="nav-drawer-head">
+    <span class="nd-title">Quick Jump</span>
+    <button class="nav-close" id="navCloseBtn" aria-label="Close">✕</button>
+  </div>
+
+  <a class="nav-link" href="#top" data-nav>↑ Top</a>
+  <a class="nav-link" href="#sec-flights" data-nav>Flights</a>
+  <a class="nav-link" href="#sec-hotels" data-nav>Hotels</a>
+  <a class="nav-link" href="#sec-weather" data-nav>Weather</a>
+  <a class="nav-link" href="#sec-days" data-nav>Day by Day</a>
+
+  <div class="nav-section-label">Jump to a day</div>
+  <div id="navDayList"></div>
+
+  <a class="nav-link" href="#sec-restaurants" data-nav>Restaurant Highlights</a>
+  <a class="nav-link" href="#sec-food" data-nav>Food Checklist</a>
+  <a class="nav-link" href="#sec-bookings" data-nav>Bookings &amp; Confirmations</a>
+  <a class="nav-link" href="#sec-transport" data-nav>Transport Notes</a>
+  <a class="nav-link" href="#sec-links" data-nav>Links &amp; References</a>
+</nav>
+
+<!-- TODAY-AT-A-GLANCE (populated by JS if today falls within the trip) -->
+<div class="glance-card" id="glanceCard">
+  <div class="gc-label">Today at a glance</div>
+  <div class="gc-title" id="glanceTitle"></div>
+  <ul id="glanceList"></ul>
+  <a class="gc-link" id="glanceLink" href="#sec-days">See full day →</a>
+</div>
+
+<div class="wrap" id="top">
 
   <!-- HERO -->
   <div class="hero">
@@ -542,7 +782,7 @@ table.data-table .status-pill{
   </div>
 
   <!-- FLIGHTS -->
-  <div class="section">
+  <div class="section" id="sec-flights">
     <div class="section-head"><span class="num">01</span><h2>Flights</h2></div>
     <div class="data-table-wrap">
       <table class="data-table">
@@ -596,7 +836,7 @@ table.data-table .status-pill{
 
   <!-- HOTELS -->
 
-  <div class="section">
+  <div class="section" id="sec-hotels">
     <div class="section-head"><span class="num">02</span><h2>Hotels</h2></div>
     <div class="section-sub">Value-tier Hyatt picks in Japan, Amex Hotel Collection in Hanoi.</div>
     <div class="data-table-wrap">
@@ -658,7 +898,7 @@ table.data-table .status-pill{
   </div>
 
   <!-- WEATHER -->
-  <div class="section">
+  <div class="section" id="sec-weather">
     <div class="section-head"><span class="num">03</span><h2>Weather &amp; What It Means</h2></div>
     <div class="section-sub">August is the hottest, wettest month across this entire route. Two things genuinely affect plans: heat in Japan, and typhoon risk in Vietnam.</div>
     <div class="data-table-wrap">
@@ -708,13 +948,13 @@ table.data-table .status-pill{
   </div>
 
   <!-- DAY BY DAY -->
-  <div class="section">
+  <div class="section" id="sec-days">
     <div class="section-head"><span class="num">04</span><h2>Day by Day</h2></div>
 
     <div class="city-block c-tokyo">
       <div class="city-header"><span class="city-dot"></span><h3>Tokyo</h3><span class="nights-tag">Hyatt Regency Tokyo, Shinjuku</span></div>
 
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-06" data-date="2026-08-06">
         <div class="day-date">AUG 6<span class="dow">Thu</span></div>
         <div>
           <div class="day-title">Direct arrival</div>
@@ -726,7 +966,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-07" data-date="2026-08-07">
         <div class="day-date">AUG 7<span class="dow">Fri</span></div>
         <div>
           <div class="day-title">Coffee, ramen, settle in</div>
@@ -740,7 +980,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-08" data-date="2026-08-08">
         <div class="day-date">AUG 8<span class="dow">Sat</span></div>
         <div>
           <div class="day-title">Modern Tokyo</div>
@@ -751,7 +991,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-09" data-date="2026-08-09">
         <div class="day-date">AUG 9<span class="dow">Sun</span></div>
         <div>
           <div class="day-title">Shopping &amp; Neapolitan pizza</div>
@@ -763,7 +1003,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-10" data-date="2026-08-10">
         <div class="day-date">AUG 10<span class="dow">Mon</span></div>
         <div>
           <div class="day-title">Skyline &amp; neighborhoods</div>
@@ -779,7 +1019,7 @@ table.data-table .status-pill{
 
     <div class="city-block c-hakone">
       <div class="city-header"><span class="city-dot"></span><h3>Hakone</h3><span class="nights-tag">Hakone Kowakien Tenyu — confirmed</span></div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-11" data-date="2026-08-11">
         <div class="day-date">AUG 11<span class="dow">Tue</span></div>
         <div>
           <div class="day-title">Onsen &amp; kaiseki — the highlight night</div>
@@ -795,7 +1035,7 @@ table.data-table .status-pill{
     <div class="city-block c-kyoto">
       <div class="city-header"><span class="city-dot"></span><h3>Kyoto <span class="mono" style="font-weight:400;font-size:0.6em;color:var(--ink-soft);">+ Nara &amp; Osaka day trips</span></h3><span class="nights-tag">Hyatt Place Kyoto</span></div>
 
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-12" data-date="2026-08-12">
         <div class="day-date">AUG 12<span class="dow">Wed</span></div>
         <div>
           <div class="day-title">Into Kyoto</div>
@@ -806,7 +1046,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-13" data-date="2026-08-13">
         <div class="day-date">AUG 13<span class="dow">Thu</span></div>
         <div>
           <div class="day-title">Fushimi Inari + Nara</div>
@@ -818,7 +1058,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-14" data-date="2026-08-14">
         <div class="day-date">AUG 14<span class="dow">Fri</span></div>
         <div>
           <div class="day-title">Osaka, for the day</div>
@@ -834,7 +1074,7 @@ table.data-table .status-pill{
 
     <div class="city-block c-transit">
       <div class="city-header"><span class="city-dot"></span><h3>Kyoto → Osaka → Hanoi</h3><span class="nights-tag">Travel day</span></div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-15" data-date="2026-08-15">
         <div class="day-date">AUG 15<span class="dow">Sat</span></div>
         <div>
           <div class="day-title">Early start, first Hanoi night</div>
@@ -849,7 +1089,7 @@ table.data-table .status-pill{
 
     <div class="city-block c-hanoi">
       <div class="city-header"><span class="city-dot"></span><h3>Hanoi</h3><span class="nights-tag">Meliá Hanoi</span></div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-16" data-date="2026-08-16">
         <div class="day-date">AUG 16<span class="dow">Sun</span></div>
         <div>
           <div class="day-title">Lan Ha Bay &amp; Ha Long Bay day cruise</div>
@@ -860,7 +1100,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-17" data-date="2026-08-17">
         <div class="day-date">AUG 17<span class="dow">Mon</span></div>
         <div>
           <div class="day-title">Full food day</div>
@@ -871,7 +1111,7 @@ table.data-table .status-pill{
           </ul>
         </div>
       </div>
-      <div class="day-row">
+      <div class="day-row" id="day-2026-08-18" data-date="2026-08-18">
         <div class="day-date">AUG 18<span class="dow">Tue</span></div>
         <div>
           <div class="day-title">Onward to Taipei</div>
@@ -888,7 +1128,7 @@ table.data-table .status-pill{
   </div>
 
   <!-- RESTAURANTS -->
-  <div class="section">
+  <div class="section" id="sec-restaurants">
     <div class="section-head"><span class="num">05</span><h2>Restaurant Highlights</h2></div>
     <div class="food-grid">
       <div class="food-col">
@@ -929,7 +1169,7 @@ table.data-table .status-pill{
   </div>
 
   <!-- FOOD CHECKLIST -->
-  <div class="section">
+  <div class="section" id="sec-food">
     <div class="section-head"><span class="num">06</span><h2>Food Checklist</h2></div>
     <div class="section-sub">The must-eat list for this trip — check these off as you go.</div>
     <div class="checklist">
@@ -945,7 +1185,7 @@ table.data-table .status-pill{
   </div>
 
   <!-- BOOKING CHECKLIST -->
-  <div class="section">
+  <div class="section" id="sec-bookings">
     <div class="section-head"><span class="num">07</span><h2>Bookings &amp; Confirmations</h2></div>
     <div class="checklist">
       <div class="check-item"><span class="check-box" style="background:var(--matcha);border-color:var(--matcha);"></span><div><div class="t">Hyatt Regency Tokyo — booked</div><div class="d">Aug 6–7 (free night, conf #40023B24194029) + Aug 7–11 (conf #1034692242) — full Aug 6–11 span covered</div></div></div>
@@ -966,7 +1206,7 @@ table.data-table .status-pill{
   </div>
 
   <!-- TRANSPORT -->
-  <div class="section">
+  <div class="section" id="sec-transport">
     <div class="section-head"><span class="num">08</span><h2>Transport Notes</h2></div>
     <div class="transport-list">
       <div class="t-item"><svg class="icon"><use href="#i-bag"/></svg><div><b>Suica cards:</b> <span class="d">pick up at an HND kiosk or vending machine on arrival — covers trains, buses, and konbini purchases everywhere in Japan, no need to buy individual tickets</span></div></div>
@@ -979,7 +1219,7 @@ table.data-table .status-pill{
   </div>
 
   <!-- LINKS -->
-  <div class="section">
+  <div class="section" id="sec-links">
     <div class="section-head"><span class="num">09</span><h2>Links &amp; References</h2></div>
     <div class="links-list">
       <div class="link-item">
@@ -995,5 +1235,156 @@ table.data-table .status-pill{
   <div class="footer">TOKYO · HAKONE · KYOTO · OSAKA · HANOI · TAIPEI &nbsp;—&nbsp; AUG 5–19, 2026</div>
 
 </div>
+
+<button class="today-fab" id="todayFab">
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+  <span id="todayFabLabel">Today</span>
+</button>
+
+<script>
+(function(){
+  // ---- Nav drawer open/close ----
+  var hamburger = document.getElementById('hamburgerBtn');
+  var drawer = document.getElementById('navDrawer');
+  var backdrop = document.getElementById('navBackdrop');
+  var closeBtn = document.getElementById('navCloseBtn');
+
+  function openNav(){
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    hamburger.classList.add('open');
+  }
+  function closeNav(){
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    hamburger.classList.remove('open');
+  }
+  hamburger.addEventListener('click', function(){
+    drawer.classList.contains('open') ? closeNav() : openNav();
+  });
+  closeBtn.addEventListener('click', closeNav);
+  backdrop.addEventListener('click', closeNav);
+  document.querySelectorAll('.nav-drawer [data-nav]').forEach(function(el){
+    el.addEventListener('click', function(){ closeNav(); });
+  });
+
+  // ---- Smooth scroll for all in-page anchors ----
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if(target){
+        e.preventDefault();
+        var y = target.getBoundingClientRect().top + window.pageYOffset - 60;
+        window.scrollTo({top:y, behavior:'smooth'});
+      }
+    });
+  });
+
+  // ---- Build day nav list + find today ----
+  var dayRows = Array.prototype.slice.call(document.querySelectorAll('.day-row[data-date]'));
+  var navDayList = document.getElementById('navDayList');
+  var todayStr = null;
+
+  // Trip is fixed to Aug 2026 — compare against real device date
+  var now = new Date();
+  var deviceDateStr = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+
+  var matchedRow = null;
+  dayRows.forEach(function(row){
+    var d = row.getAttribute('data-date');
+    var dateLabel = row.querySelector('.day-date').childNodes[0].textContent.trim();
+    var dow = row.querySelector('.dow') ? row.querySelector('.dow').textContent.trim() : '';
+    var isToday = (d === deviceDateStr);
+    if(isToday){ matchedRow = row; todayStr = d; }
+
+    var link = document.createElement('a');
+    link.className = 'nav-day-link' + (isToday ? ' is-today' : '');
+    link.href = '#' + row.id;
+    link.setAttribute('data-nav','');
+    var titleEl = row.querySelector('.day-title');
+    var titleText = titleEl ? titleEl.textContent.trim() : '';
+    link.innerHTML = '<span><span class="nd-date">' + dateLabel + ' ' + dow + '</span> — ' + titleText + '</span>' + (isToday ? '<span class="nav-today-badge">TODAY</span>' : '');
+    navDayList.appendChild(link);
+  });
+
+  // ---- Highlight today's row + inject TODAY pill ----
+  if(matchedRow){
+    matchedRow.classList.add('is-today');
+    var dateDiv = matchedRow.querySelector('.day-date');
+    var pill = document.createElement('span');
+    pill.className = 'today-pill';
+    pill.textContent = 'TODAY';
+    dateDiv.appendChild(document.createElement('br'));
+    dateDiv.appendChild(pill);
+  }
+
+  // ---- Topbar day label ----
+  var tbDay = document.getElementById('tbDay');
+  if(matchedRow){
+    var titleEl2 = matchedRow.querySelector('.day-title');
+    tbDay.textContent = 'Today · ' + (titleEl2 ? titleEl2.textContent.trim() : '');
+  } else {
+    var tripStart = new Date('2026-08-05T00:00:00');
+    var tripEnd = new Date('2026-08-19T23:59:59');
+    if(now < tripStart){
+      var diffDays = Math.ceil((tripStart - now) / 86400000);
+      tbDay.textContent = diffDays + ' day' + (diffDays===1?'':'s') + ' until departure';
+    } else if(now > tripEnd){
+      tbDay.textContent = 'Trip completed';
+    } else {
+      tbDay.textContent = 'AUG 5–19, 2026';
+    }
+  }
+
+  // ---- Today FAB behavior ----
+  var fab = document.getElementById('todayFab');
+  var fabLabel = document.getElementById('todayFabLabel');
+  if(matchedRow){
+    fabLabel.textContent = 'Today';
+    fab.addEventListener('click', function(){
+      var y = matchedRow.getBoundingClientRect().top + window.pageYOffset - 60;
+      window.scrollTo({top:y, behavior:'smooth'});
+    });
+  } else {
+    // Outside trip dates — jump to nearest day (first if before trip, last if after)
+    var now2 = new Date();
+    var tripStart2 = new Date('2026-08-05T00:00:00');
+    var fallbackRow = (now2 < tripStart2) ? dayRows[0] : dayRows[dayRows.length-1];
+    fabLabel.textContent = (now2 < tripStart2) ? 'Trip start' : 'Latest day';
+    fab.addEventListener('click', function(){
+      var y = fallbackRow.getBoundingClientRect().top + window.pageYOffset - 60;
+      window.scrollTo({top:y, behavior:'smooth'});
+    });
+  }
+
+  // ---- Today-at-a-glance card ----
+  if(matchedRow){
+    var glanceCard = document.getElementById('glanceCard');
+    var glanceTitle = document.getElementById('glanceTitle');
+    var glanceList = document.getElementById('glanceList');
+    var glanceLink = document.getElementById('glanceLink');
+
+    var dateLabel2 = matchedRow.querySelector('.day-date').childNodes[0].textContent.trim();
+    var dowLabel = matchedRow.querySelector('.dow') ? matchedRow.querySelector('.dow').textContent.trim() : '';
+    var titleText2 = matchedRow.querySelector('.day-title') ? matchedRow.querySelector('.day-title').textContent.trim() : '';
+    glanceTitle.innerHTML = dateLabel2 + ' ' + dowLabel + ' — ' + titleText2;
+
+    var acts = matchedRow.querySelectorAll('.day-acts li');
+    acts.forEach(function(li){
+      var clone = document.createElement('li');
+      // Strip the svg icon, keep the text/links
+      var liCopy = li.cloneNode(true);
+      var svg = liCopy.querySelector('svg');
+      if(svg) svg.remove();
+      clone.innerHTML = liCopy.innerHTML;
+      glanceList.appendChild(clone);
+    });
+    glanceLink.href = '#' + matchedRow.id;
+    glanceCard.classList.add('show');
+  }
+})();
+</script>
+
 </body>
 </html>
