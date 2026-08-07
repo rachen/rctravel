@@ -107,6 +107,15 @@ h1,h2,h3,.disp{font-family:'Shippori Mincho', serif;}
   padding:12px 22px;
 }
 .hero .dates span.sep{color:var(--vermillion);}
+.hero-updated{
+  margin-top:8px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:10px;
+  letter-spacing:0.05em;
+  color:var(--ink-soft);
+  opacity:0.75;
+}
+.hero-updated span{color:var(--vermillion);font-weight:600;}
 
 /* ---------- STAMP ROUTE ---------- */
 .route-map{
@@ -482,7 +491,7 @@ table.data-table .status-pill{
 .link-item .d{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
 
 /* ---------- TOPBAR & NAV ---------- */
-body{padding-top:68px;}
+body{padding-top:52px;}
 .topbar{
   position:fixed;top:0;left:0;right:0;
   height:52px;
@@ -491,18 +500,6 @@ body{padding-top:68px;}
   display:flex;align-items:center;justify-content:space-between;
   padding:0 14px;
   z-index:200;
-}
-.updated-bar{
-  position:fixed;top:52px;left:0;right:0;
-  height:16px;
-  background:var(--indigo-deep);
-  color:rgba(244,238,225,0.75);
-  font-family:'JetBrains Mono', monospace;
-  font-size:9px;
-  letter-spacing:0.04em;
-  text-align:center;
-  line-height:16px;
-  z-index:199;
 }
 .topbar .tb-title{
   font-family:'Shippori Mincho', serif;
@@ -748,7 +745,6 @@ body{padding-top:68px;}
     <span></span><span></span><span></span>
   </button>
 </div>
-<div class="updated-bar">Last updated <span id="lastUpdated">Aug 7, 2026</span></div>
 
 <!-- NAV DRAWER -->
 <div class="nav-backdrop" id="navBackdrop"></div>
@@ -801,6 +797,7 @@ body{padding-top:68px;}
       <span style="opacity:0.4">|</span>
       <span>14 NIGHTS</span>
     </div>
+    <div class="hero-updated">Last updated <span id="lastUpdated">Aug 7, 2026</span></div>
   </div>
 
   <!-- ROUTE STAMPS -->
