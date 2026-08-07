@@ -482,7 +482,7 @@ table.data-table .status-pill{
 .link-item .d{font-size:12.5px;color:var(--ink-soft);margin-top:2px;}
 
 /* ---------- TOPBAR & NAV ---------- */
-body{padding-top:52px;}
+body{padding-top:68px;}
 .topbar{
   position:fixed;top:0;left:0;right:0;
   height:52px;
@@ -491,6 +491,18 @@ body{padding-top:52px;}
   display:flex;align-items:center;justify-content:space-between;
   padding:0 14px;
   z-index:200;
+}
+.updated-bar{
+  position:fixed;top:52px;left:0;right:0;
+  height:16px;
+  background:var(--indigo-deep);
+  color:rgba(244,238,225,0.75);
+  font-family:'JetBrains Mono', monospace;
+  font-size:9px;
+  letter-spacing:0.04em;
+  text-align:center;
+  line-height:16px;
+  z-index:199;
 }
 .topbar .tb-title{
   font-family:'Shippori Mincho', serif;
@@ -557,6 +569,23 @@ body{padding-top:52px;}
   width:32px;height:32px;border:none;background:none;
   font-size:20px;color:var(--ink-soft);cursor:pointer;line-height:1;
 }
+.share-btn{
+  display:flex;align-items:center;gap:8px;
+  width:calc(100% - 32px);
+  margin:12px 16px 4px;
+  padding:11px 14px;
+  background:var(--indigo-deep);
+  color:var(--paper);
+  border:none;
+  border-radius:7px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.03em;
+  cursor:pointer;
+}
+.share-btn svg{width:15px;height:15px;stroke:var(--paper);fill:none;stroke-width:2;flex-shrink:0;}
+.share-btn.copied{background:var(--matcha);}
 .nav-section-label{
   font-family:'JetBrains Mono', monospace;
   font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
@@ -719,6 +748,7 @@ body{padding-top:52px;}
     <span></span><span></span><span></span>
   </button>
 </div>
+<div class="updated-bar">Last updated <span id="lastUpdated">Aug 7, 2026</span></div>
 
 <!-- NAV DRAWER -->
 <div class="nav-backdrop" id="navBackdrop"></div>
@@ -727,6 +757,11 @@ body{padding-top:52px;}
     <span class="nd-title">Quick Jump</span>
     <button class="nav-close" id="navCloseBtn" aria-label="Close">✕</button>
   </div>
+
+  <button class="share-btn" id="shareBtn">
+    <svg viewBox="0 0 24 24"><path d="M18 8a3 3 0 100-6 3 3 0 000 6zM6 15a3 3 0 100-6 3 3 0 000 6zM18 22a3 3 0 100-6 3 3 0 000 6zM8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+    <span id="shareBtnLabel">Copy share link</span>
+  </button>
 
   <a class="nav-link" href="#top" data-nav>↑ Top</a>
   <a class="nav-link" href="#sec-flights" data-nav>Flights</a>
@@ -1245,6 +1280,42 @@ body{padding-top:52px;}
 
 <script>
 (function(){
+  // ---- Share button: copy current URL ----
+  var shareBtn = document.getElementById('shareBtn');
+  var shareBtnLabel = document.getElementById('shareBtnLabel');
+  if(shareBtn){
+    shareBtn.addEventListener('click', function(){
+      var url = window.location.href;
+      function showCopied(){
+        shareBtnLabel.textContent = 'Copied!';
+        shareBtn.classList.add('copied');
+        setTimeout(function(){
+          shareBtnLabel.textContent = 'Copy share link';
+          shareBtn.classList.remove('copied');
+        }, 1800);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(showCopied).catch(function(){
+          fallbackCopy(url, showCopied);
+        });
+      } else {
+        fallbackCopy(url, showCopied);
+      }
+      function fallbackCopy(text, cb){
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try { document.execCommand('copy'); } catch(e){}
+        document.body.removeChild(ta);
+        cb();
+      }
+    });
+  }
+
   // ---- Nav drawer open/close ----
   var hamburger = document.getElementById('hamburgerBtn');
   var drawer = document.getElementById('navDrawer');
